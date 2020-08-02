@@ -1,7 +1,7 @@
 Data <- read.table("household_power_consumption.txt", header=TRUE, sep=";", na.strings = "?", 
 colClasses = c('character','character','numeric','numeric','numeric','numeric','numeric','numeric','numeric'))
 
-t$Date <- as.Date(t$Date, "%d/%m/%Y")
+Data$Date <- as.Date(Data$Date, "%d/%m/%Y")
 
 Data <- subset(Data,Date >= as.Date("2007-2-1") & Date <= as.Date("2007-2-2"))
 Data <- Data[complete.cases(Data),]
